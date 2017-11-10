@@ -1,4 +1,8 @@
-# ReduxSimpleStarter
+# Redux Sample
+
+This is my own personal version of ReduxSimpleStarter with commented notes. To get the original files please visit [StephenGrider's Repository](https://github.com/StephenGrider/ReduxSimpleStarter.git)
+
+## ReduxSimpleStarter
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
