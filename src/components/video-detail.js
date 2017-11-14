@@ -1,7 +1,9 @@
 import React from 'react';
 
-//This component won't need to keep track of state so it makes sense to only use a function-based component.
+//This component won't need to keep track of state so it makes sense to only use a function based component.
+//No need to extend or even import Component from React.
 const VideoDetail = ({video}) => {
+  //Small check for initial page render. If we haven't heard back from YouTube yet, we don't have a video.
   if(!video){
     return <div>Loading...</div>;
   }

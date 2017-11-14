@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-//class based component, different than a plain function based component
 class SearchBar extends Component {
   constructor(props){
     super(props);
@@ -9,7 +8,7 @@ class SearchBar extends Component {
 
   render(){
     //First example
-    //Component has its state updated but only when the component's state changes, input value does not update. Only an event fires
+    //Component updates state but only when the component's onChange even fires. Input value does not update. Only an event fires
     // return (
     //   <div>
     //     <input onChange={ event => this.setState({ term: event.target.value }) } />
@@ -20,7 +19,6 @@ class SearchBar extends Component {
 
     //Second example
     //Controlled Component
-    //this.setState causes Component to re-render
     //value of input is set to new value of this.state.term
     return (
       <div className="search-bar">
@@ -34,8 +32,10 @@ class SearchBar extends Component {
   }
 
   //Can define event handlers here, as well in the onChange property
+  //Important! Changing state causes Component to re-render
   onInputChange(term){
-    console.log(event.target.value);
+    this.setState({term});
+    this.props.onSearchTermChange(term);
   }
 };
 
