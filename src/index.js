@@ -19,7 +19,10 @@ class App extends Component {
     this.state = { videos: [] };
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      this.setState({ videos });
+      this.setState({ 
+        videos: videos,
+        selectedVideo: videos[0] 
+      });
       //ES6 interprets this as this.setState({ videos: videos }), where the key and value share the same name
     });
   }
@@ -29,13 +32,15 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]} />
+        <VideoDetail video={this.state.selectedVideo} />
         {/*
           JSX passing props
           When the state changes and this component is re-rendered, the prop 'videos' will be updated and passed to the VideoList component
         */}
         {/* Also, to write comments in JSX, you need to wrap a JS comment in a block. Great. */}
-        <VideoList videos={this.state.videos} />
+        <VideoList 
+          onVideoSelect={ selectedVideo => this.setState({selectedVideo}) }
+          videos={this.state.videos} />
       </div>
     );
   }

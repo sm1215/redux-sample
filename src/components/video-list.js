@@ -5,7 +5,12 @@ import VideoListItem from './video-list-item';
 const VideoList = (props) => {
   const videoItems = props.videos.map((video) => {
     //react likes when arrays have unique keys so it knows which item to update
-    return <VideoListItem key={video.id.videoId} video={video} />
+    return (
+      <VideoListItem 
+        onVideoSelect={props.onVideoSelect}
+        key={video.id.videoId}
+        video={video} />
+    );
   });
 
   return (
