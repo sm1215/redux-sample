@@ -2,6 +2,7 @@ import React from 'react';
 
 //ES6
 //{video} would be the same as declaring "const video = props.video";
+//The same holds true for multiple properties like {video, onVideoSelect}
 const VideoListItem = ({video, onVideoSelect}) => {
   // const video = props.video;
 
