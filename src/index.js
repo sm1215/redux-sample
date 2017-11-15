@@ -17,8 +17,10 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 //Component state and application state are completely different
 
 //Reducers are responsible for changing application state over time
-//Actions are plain Javascript objects usually triggered by user interaction and invoke Reducers (basically events
+//Actions are plain Javascript objects usually triggered by user interaction and invoke Reducers (basically events)
 
+
+//Application flow: Action > Reducer > State > Render
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
