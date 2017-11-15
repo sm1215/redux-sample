@@ -13,6 +13,12 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 //The two libraries are disconnected
 //Use React-Redux library to connect the two
 
+//Redux State - all data the app contains wrapped in a single object
+//Component state and application state are completely different
+
+//Reducers are responsible for changing application state over time
+//Actions are plain Javascript objects usually triggered by user interaction and invoke Reducers (basically events
+
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
